@@ -45,7 +45,7 @@ d3.json(url).then(function (data) {
         let magnitude = feature.properties.mag;
         let depth = coords[2];
 
-        // The marker size and color depend on earthquake's magnitude and depth
+        // The marker size and color depend on magnitude and depth
         L.circle(latLng, {
             fillOpacity: 0.75,
             color: "none",
@@ -56,9 +56,9 @@ d3.json(url).then(function (data) {
 });
 
 // Add legend
-var legend = L.control({position: "bottomright"});
+let legend = L.control({position: "bottomright"});
 legend.onAdd = function() {
-    var div = L.DomUtil.create("div", "info legend"),
+    let div = L.DomUtil.create("div", "info legend"),
     depth = [-10, 10, 30, 50, 70, 90];
 
     div.innerHTML += "<h3 style='text-align: center'>Depth</h3>"
